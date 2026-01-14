@@ -41,7 +41,16 @@ def main():
                 cuenta_origen.transferencia_cuenta(monto, cuenta_destino)
                 print("Transferencia realizada con éxito.")
 
-            
+            elif opcion == "4":
+                saldo = cuenta_origen.saldo_cuenta()
+                print(f"Saldo actual: S/ {saldo:.2f}")
+
+            elif opcion == "5":
+                print("Saliendo...")
+                break
+
+            else:
+                print("Opción inválida. Intenta nuevamente.")
 
         except ValueError as error:
             print(f"Error: {error}")

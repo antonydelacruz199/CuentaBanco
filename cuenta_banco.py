@@ -54,4 +54,7 @@ class CuentaBanco:
         return self.saldo, cuenta_destino.saldo
 
     def saldo_cuenta(self) -> float:
-        pass
+        """
+        Retorna el saldo actual.
+        """
+        return self.saldo
