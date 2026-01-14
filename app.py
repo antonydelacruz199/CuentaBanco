@@ -23,7 +23,13 @@ def main():
         mostra_menu()
         opcion = input("Seleccione una opción (1-5): ").strip()
 
-        
+         try:
+            if opcion == "1":
+                monto = pedir_monto("Monto a depositar: ")
+                cuenta_origen.deposito_cuenta(monto)
+                print("Depósito realizado con éxito.")
+                  
+
 
 if __name__ == "__main__":
     main()

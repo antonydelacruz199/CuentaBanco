@@ -20,8 +20,13 @@ class CuentaBanco:
         return float(monto)
 
     def deposito_cuenta(self, monto: float):
-        pass
-
+        """
+        Deposita un monto positivo a la cuenta.
+        """
+        monto = self._validar_monto(monto)
+        self.saldo += monto
+        return self.saldo
+    
     def retiro_cuenta(self, monto: float):
         pass
 
