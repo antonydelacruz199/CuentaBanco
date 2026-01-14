@@ -7,7 +7,17 @@ class CuentaBanco:
         :param saldo_inicial: Saldo inicial de la cuenta (por defecto 0.0)
         """
         self.titular = titular
-        self.saldo = saldo_inicial
+        self.saldo = float(saldo_inicial)
+
+    def _validar_monto(self, monto: float) -> float:
+        """
+        Valida que el monto sea numérico y mayor que cero.
+        """
+        if not isinstance(monto, (int, float)):
+            raise TypeError("El monto debe ser un número.")
+        if monto <= 0:
+            raise ValueError("El monto debe ser mayor que cero.")
+        return float(monto)
 
     def deposito_cuenta(self, monto: float):
         pass
