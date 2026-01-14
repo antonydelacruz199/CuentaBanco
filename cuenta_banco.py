@@ -26,9 +26,16 @@ class CuentaBanco:
         monto = self._validar_monto(monto)
         self.saldo += monto
         return self.saldo
-    
+
     def retiro_cuenta(self, monto: float):
-        pass
+        """
+        Retira un monto positivo si hay saldo suficiente.
+        """
+        monto = self._validar_monto(monto)
+        if monto > self.saldo:
+            raise ValueError("Saldo insuficiente.")
+        self.saldo -= monto
+        return self.saldo
 
     def transferencia_cuenta(self, monto: float, cuenta_destino):
         pass
