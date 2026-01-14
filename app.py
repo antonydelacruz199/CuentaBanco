@@ -36,6 +36,13 @@ def main():
                 cuenta_origen.retiro_cuenta(monto)
                 print("Retiro realizado con éxito.")
 
+            elif opcion == "3":
+                monto = pedir_monto("Monto a transferir: ")
+                cuenta_origen.transferencia_cuenta(monto, cuenta_destino)
+                print("Transferencia realizada con éxito.")
+
+            
+
         except ValueError as error:
             print(f"Error: {error}")
         except TypeError as error:

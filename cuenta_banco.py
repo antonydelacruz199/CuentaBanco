@@ -38,7 +38,20 @@ class CuentaBanco:
         return self.saldo
 
     def transferencia_cuenta(self, monto: float, cuenta_destino):
-        pass
+        """
+        Transfiere un monto desde esta cuenta hacia otra cuenta destino.
+        """
+        if not isinstance(cuenta_destino, CuentaBanco):
+            raise TypeError("La cuenta destino no es válida.")
+        if cuenta_destino is self:
+            raise ValueError("No se puede transferir a la misma cuenta.")
+
+        monto = self._validar_monto(monto)
+
+        self.retiro_cuenta(monto)
+        cuenta_destino.deposito_cuenta(monto)
+
+        return self.saldo, cuenta_destino.saldo
 
     def saldo_cuenta(self) -> float:
         pass
